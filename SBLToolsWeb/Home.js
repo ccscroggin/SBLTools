@@ -47,6 +47,10 @@
             var sheet = ctx.workbook.worksheets.getActiveWorksheet();
             // Queue a command to write the sample data to the worksheet
             sheet.getRange("B3:D5").values = values;
+            sheet.getRange("B2").values = "Range of Data Added:";
+            sheet.getRange("B7").values = "Loan Amount:";
+            sheet.getRange("C7").values = 2000000;
+            sheet.names.add("Loan_Amount1", sheet.getRange("C7"));
 
             // Run the queued-up commands, and return a promise to indicate task completion
             return ctx.sync();
@@ -107,7 +111,7 @@
         Excel.run(function (ctx) {
            
             var sheet = ctx.workbook.worksheets.getItem("Sheet1");
-            var range = sheet.getRange("loan_amount");
+            var range = sheet.getRange("Loan_Amount1");
             range.load("values");
             // Run the queued-up command, and return a promise to indicate task completion
             return ctx.sync()
