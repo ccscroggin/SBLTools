@@ -1,0 +1,2 @@
+bin\Debug\OfficeAppManifests\SBLToolsManifest.xml
+C:\Users\ccscr\source\repos\SBLTools\SBLTools\bin\Debug\SBLTools.debugapp
